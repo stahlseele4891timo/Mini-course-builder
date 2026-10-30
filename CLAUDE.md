@@ -7,9 +7,9 @@
 
 ## Project Structure
 
-- `index.html`: the single long scrolling page (brief, deliverables, pitches, plan template)
-- `styles.css`: layout and light/dark theme colours
-- `script.js`: theme toggle and saving the plan template in the browser
+- `index.html`: the single page, with one lesson section per slide (brief, deliverables, pitches)
+- `styles.css`: plain layout and light/dark theme colours
+- `script.js`: theme toggle and switching between lesson sections
 - `Branding_and_Marketing_Activity.pptx`: an earlier sample 3-slide deck
 - `README.md`: project title
 
@@ -28,14 +28,13 @@
 
 ### Site structure
 
-One long scrolling page (`index.html`), no separate pages. A sticky header holds links that jump to each section, plus the light/dark toggle. Students scroll down in this order:
+One page (`index.html`) with one lesson section per slide. Only one lesson shows at a time. Students switch with JavaScript, using the lesson buttons at the top or the Previous/Next buttons at the bottom, and the page address (`#lesson-2`) records which lesson is open. The light/dark toggle is in the header.
 
-1. **Brief**: the five teams and countries
-2. **Deliverables**: the five things each team must produce
-3. **Pitches**: the 4-minute pitch, peer judging, and debrief
-4. **Draft your plan**: a form with one box per deliverable, saved in the student's own browser
+1. **Your brief**: the five teams and countries
+2. **What to deliver**: the five parts of the team's plan
+3. **Pitches and judging**: the 4-minute pitch, peer judging, and debrief
 
 ### Phases
 
-- **Phase 1: the course built from my slides.** The three lessons plus the plan template, built once from the uploaded deck. *Done.*
-- **Phase 2: hand-in.** Add a copy/print button so students can submit their plan. Only if wanted.
+- **Phase 1: the course built from my slides.** One lesson per slide, switched with JavaScript, plain styling. *Done.*
+- **Phase 2: design.** Style the site once it works.

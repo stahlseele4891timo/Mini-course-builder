@@ -1,114 +1,37 @@
 :root {
   --bg: #ffffff;
-  --surface: #eef3f8;
   --text: #1b1b1b;
-  --muted: #4a5a6a;
-  --heading: #0b2545;
-  --accent: #f28c28;
-  --accent-text: #0b2545;
-  --border: #cfd9e3;
-  --focus: #13315c;
+  --border: #bbbbbb;
+  --active: #e6e6e6;
 }
 :root[data-theme="dark"] {
-  --bg: #0b1626;
-  --surface: #13243c;
-  --text: #eaf0f6;
-  --muted: #a9b8c8;
-  --heading: #ffffff;
-  --accent: #f6a04d;
-  --accent-text: #0b1626;
-  --border: #2a3f5c;
-  --focus: #f6a04d;
+  --bg: #161616;
+  --text: #eeeeee;
+  --border: #555555;
+  --active: #333333;
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 body {
-  margin: 0;
-  font-family: Calibri, "Segoe UI", Arial, sans-serif;
-  font-size: 1.0625rem;
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 45rem;
+  font-family: Arial, sans-serif;
   line-height: 1.6;
   color: var(--text);
   background: var(--bg);
 }
-h1, h2, h3, h4 { font-family: Cambria, Georgia, serif; color: var(--heading); line-height: 1.2; margin: 0 0 .5rem; }
-h1 { font-size: clamp(2rem, 6vw, 3.25rem); }
-h2 { font-size: clamp(1.5rem, 4vw, 2.1rem); }
-h3 { font-size: 1.25rem; }
-h4 { font-size: 1.1rem; }
-h2 small { font-family: Calibri, Arial, sans-serif; font-size: .5em; font-weight: 400; color: var(--muted); }
-p { margin: 0 0 1rem; }
-a { color: inherit; }
-:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
-
-.site-header {
-  position: sticky; top: 0; z-index: 10;
-  display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.25rem;
-  padding: .75rem 1rem;
-  background: var(--bg); border-bottom: 1px solid var(--border);
+header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem; }
+h1 { font-size: 1.5rem; margin: 0; }
+h2 { font-size: 1.4rem; }
+h2:focus { outline: none; }
+button {
+  font: inherit; color: var(--text); background: var(--bg);
+  border: 1px solid var(--border); border-radius: 4px;
+  padding: .5rem .9rem; cursor: pointer;
 }
-.brand { font-family: Cambria, Georgia, serif; font-weight: 700; font-size: 1.1rem; color: var(--heading); text-decoration: none; margin-right: auto; }
-.site-header nav { display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
-.site-header nav a { text-decoration: none; color: var(--muted); padding: .25rem 0; }
-.site-header nav a:hover { color: var(--heading); text-decoration: underline; }
-.theme-toggle {
-  font: inherit; font-size: .95rem; cursor: pointer;
-  padding: .4rem .9rem; border-radius: 999px;
-  border: 1px solid var(--border); background: var(--surface); color: var(--text);
-}
-.theme-toggle:hover { border-color: var(--accent); }
-
-main { max-width: 52rem; margin: 0 auto; padding: 0 1rem; }
-.hero { padding: 3rem 0 2rem; }
-.eyebrow { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .9rem; margin-bottom: .5rem; }
-.lead { font-size: 1.2rem; color: var(--muted); max-width: 40rem; }
-
-.lesson { padding: 2.5rem 0; border-top: 1px solid var(--border); }
-.step {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 2.5rem; height: 2.5rem; border-radius: 50%; margin-bottom: .75rem;
-  background: var(--accent); color: var(--accent-text); font-weight: 700; font-size: 1.1rem;
-}
-.teams { list-style: none; padding: 0; margin: 1rem 0 1.5rem; display: grid; gap: .6rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
-.teams li { background: var(--surface); border-radius: .6rem; padding: .75rem 1rem; }
-.teams strong { display: block; color: var(--accent); font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; }
-.callout { background: var(--surface); border-radius: .75rem; padding: 1.25rem 1.5rem; margin-top: 1.5rem; }
-.callout p:last-child { margin-bottom: 0; }
-
-.deliverables { list-style: none; counter-reset: d; padding: 0; margin: 1.25rem 0 0; display: grid; gap: .9rem; }
-.deliverables li { counter-increment: d; position: relative; background: var(--surface); border-radius: .75rem; padding: 1rem 1.25rem 1rem 4rem; }
-.deliverables li::before {
-  content: counter(d); position: absolute; left: 1.1rem; top: 1rem;
-  width: 2.1rem; height: 2.1rem; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--heading); color: var(--bg); font-weight: 700;
-}
-.deliverables p { margin: 0; }
-
-.big { font-size: 1.35rem; }
-.criteria { display: grid; gap: .9rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); margin: 1rem 0; }
-.criteria div { background: var(--surface); border-radius: .75rem; padding: 1rem 1.25rem; }
-.criteria p { margin: 0; }
-
-form { margin-top: 1.5rem; }
-fieldset { border: 1px solid var(--border); border-radius: .75rem; padding: 1rem 1.25rem; margin: 0 0 1.25rem; min-width: 0; }
-legend { font-family: Cambria, Georgia, serif; font-weight: 700; color: var(--heading); padding: 0 .5rem; font-size: 1.15rem; }
-.field { display: block; font-weight: 600; margin-bottom: 1rem; }
-.field input, .field textarea, .field select {
-  display: block; width: 100%; margin-top: .3rem;
-  font: inherit; font-weight: 400; color: var(--text);
-  background: var(--bg); border: 1px solid var(--border); border-radius: .5rem; padding: .55rem .7rem;
-}
-.field textarea { resize: vertical; }
-.grid { display: grid; gap: 0 1rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
-.status { color: var(--muted); font-size: .95rem; min-height: 1.5rem; }
-.site-footer { text-align: center; color: var(--muted); padding: 2rem 1rem; border-top: 1px solid var(--border); font-size: .9rem; }
-
-@media (max-width: 40rem) {
-  body { font-size: 1rem; }
-  .site-header nav { order: 3; width: 100%; }
-  .hero { padding-top: 2rem; }
-  .deliverables li { padding-left: 3.5rem; }
-  .deliverables li::before { left: .8rem; }
-}
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+button[aria-current="true"] { background: var(--active); font-weight: bold; }
+button:disabled { opacity: .4; cursor: default; }
+nav { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; }
+#pager { justify-content: space-between; border-top: 1px solid var(--border); padding-top: 1rem; }
+[hidden] { display: none; }

@@ -14,30 +14,30 @@
   });
   showTheme();
 
-  var form = document.getElementById("plan-form");
-  var status = document.getElementById("save-status");
-  var KEY = "plan-draft";
+  var lessons = Array.prototype.slice.call(document.querySelectorAll(".lesson"));
+  var tabs = Array.prototype.slice.call(document.querySelectorAll("#lesson-nav button"));
+  var prev = document.getElementById("prev");
+  var next = document.getElementById("next");
+  var current = 0;
 
-  function load() {
-    try {
-      var saved = JSON.parse(localStorage.getItem(KEY) || "{}");
-      Object.keys(saved).forEach(function (name) {
-        if (form.elements[name]) form.elements[name].value = saved[name];
-      });
-    } catch (e) {}
-  }
-  function save() {
-    var data = {};
-    Array.prototype.forEach.call(form.elements, function (el) {
-      if (el.name) data[el.name] = el.value;
+  function show(index, moveFocus) {
+    current = Math.max(0, Math.min(lessons.length - 1, index));
+    lessons.forEach(function (lesson, i) { lesson.hidden = i !== current; });
+    tabs.forEach(function (tab, i) {
+      if (i === current) tab.setAttribute("aria-current", "true");
+      else tab.removeAttribute("aria-current");
     });
-    try {
-      localStorage.setItem(KEY, JSON.stringify(data));
-      status.textContent = "Saved in this browser.";
-    } catch (e) {
-      status.textContent = "Could not save: your browser is blocking storage.";
-    }
+    prev.disabled = current === 0;
+    next.disabled = current === lessons.length - 1;
+    history.replaceState(null, "", "#" + lessons[current].id);
+    window.scrollTo(0, 0);
+    if (moveFocus) lessons[current].querySelector("h2").focus();
   }
-  form.addEventListener("input", save);
-  load();
+
+  tabs.forEach(function (tab, i) { tab.addEventListener("click", function () { show(i, true); }); });
+  prev.addEventListener("click", function () { show(current - 1, true); });
+  next.addEventListener("click", function () { show(current + 1, true); });
+
+  var start = lessons.map(function (l) { return "#" + l.id; }).indexOf(location.hash);
+  show(start === -1 ? 0 : start, false);
 })();
