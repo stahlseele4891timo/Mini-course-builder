@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Branding and Marketing Activity</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Apply the saved theme before the page paints, to avoid a flash. Default is light.
+    try { if (localStorage.getItem("theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">Branding &amp; Marketing Activity</a>
+    <nav aria-label="Sections">
+      <a href="#brief">Brief</a>
+      <a href="#deliverables">Deliverables</a>
+      <a href="#pitches">Pitches</a>
+      <a href="#plan">Your plan</a>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">Dark theme</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Team activity</p>
+      <h1>Brand an unfamiliar airport</h1>
+      <p class="lead">Work in a team to build a marketing and branding plan for an airport you know nothing about, then pitch it to your peers.</p>
+    </section>
+
+    <section id="brief" class="lesson">
+      <span class="step">1</span>
+      <h2>Your brief</h2>
+      <p>Create a marketing and branding plan for an airport located in one of these countries:</p>
+      <ul class="teams">
+        <li><strong>Team 1</strong> Albania</li>
+        <li><strong>Team 2</strong> Papua New Guinea</li>
+        <li><strong>Team 3</strong> Azerbaijan</li>
+        <li><strong>Team 4</strong> Eritrea</li>
+        <li><strong>Team 5</strong> Paraguay</li>
+      </ul>
+      <div class="callout">
+        <h3>Why these countries?</h3>
+        <p>You hold no existing brand associations for them. You must build <strong>salience</strong>, <strong>meaning</strong>, <strong>response</strong> and <strong>resonance</strong> from nothing.</p>
+      </div>
+    </section>
+
+    <section id="deliverables" class="lesson">
+      <span class="step">2</span>
+      <h2>Required deliverables <small>(Google Slides)</small></h2>
+      <ol class="deliverables">
+        <li><h3>Positioning statement</h3><p>Your target segment, and what the brand promises them (Step 1 of the process).</p></li>
+        <li><h3>Brand elements</h3><p>Use as many as you sensibly can: name, logo concept, slogan, character or mascot, URL, jingle idea, signature packaging or visual identity.</p></li>
+        <li><h3>Resonance plan</h3><p>One concrete initiative per pyramid level: how you build salience, meaning, response and resonance.</p></li>
+        <li><h3>Marketing channels</h3><p>Three channels with reasons (B2C), plus one B2B action toward airlines (Lesson 16).</p></li>
+        <li><h3>Secondary brand association</h3><p>One you will leverage: country, event, co-brand, licensing and so on.</p></li>
+      </ol>
+    </section>
+
+    <section id="pitches" class="lesson">
+      <span class="step">3</span>
+      <h2>Pitches and judging <small>(30 min)</small></h2>
+      <p class="big">4-minute pitch per team: <em>sell us the airport.</em></p>
+      <h3>Peer judging (1&ndash;5 each)</h3>
+      <div class="criteria">
+        <div><h4>Coherence</h4><p>Do all elements tell ONE story?</p></div>
+        <div><h4>Framework fidelity</h4><p>Is every pyramid level genuinely addressed?</p></div>
+        <div><h4>Feasibility</h4><p>Could this airport actually execute this plan?</p></div>
+      </div>
+      <div class="callout">
+        <h3>Debrief</h3>
+        <p>Which element carried each brand? What did teams reach for first, and does that match how real brands are built?</p>
+      </div>
+    </section>
+
+    <section id="plan" class="lesson">
+      <span class="step">&#9998;</span>
+      <h2>Draft your plan</h2>
+      <p>Use this template to draft your five deliverables. Your text is saved in this browser only, so it is still here if you refresh the page. It is not sent anywhere.</p>
+      <form id="plan-form" autocomplete="off">
+        <label class="field">Your team and airport
+          <select name="team">
+            <option value="">Choose your team&hellip;</option>
+            <option>Team 1: Albania</option>
+            <option>Team 2: Papua New Guinea</option>
+            <option>Team 3: Azerbaijan</option>
+            <option>Team 4: Eritrea</option>
+            <option>Team 5: Paraguay</option>
+          </select>
+        </label>
+        <label class="field">Airport name (a real airport, or a plausible new gateway)
+          <input type="text" name="airport">
+        </label>
+
+        <fieldset>
+          <legend>1. Positioning statement</legend>
+          <label class="field">Target segment
+            <input type="text" name="segment" placeholder="Who is the brand for?">
+          </label>
+          <label class="field">The brand promise
+            <textarea name="promise" rows="3" placeholder="What does the brand promise them?"></textarea>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Brand elements</legend>
+          <div class="grid">
+            <label class="field">Name<input type="text" name="el-name"></label>
+            <label class="field">Logo concept<input type="text" name="el-logo"></label>
+            <label class="field">Slogan<input type="text" name="el-slogan"></label>
+            <label class="field">Character / mascot<input type="text" name="el-mascot"></label>
+            <label class="field">URL<input type="text" name="el-url"></label>
+            <label class="field">Jingle idea<input type="text" name="el-jingle"></label>
+          </div>
+          <label class="field">Signature packaging / visual identity
+            <textarea name="el-visual" rows="2"></textarea>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. Resonance plan</legend>
+          <label class="field">Salience initiative
+            <textarea name="res-salience" rows="2"></textarea>
+          </label>
+          <label class="field">Meaning initiative
+            <textarea name="res-meaning" rows="2"></textarea>
+          </label>
+          <label class="field">Response initiative
+            <textarea name="res-response" rows="2"></textarea>
+          </label>
+          <label class="field">Resonance initiative
+            <textarea name="res-resonance" rows="2"></textarea>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>4. Marketing channels</legend>
+          <label class="field">B2C channel 1 and why
+            <textarea name="ch-1" rows="2"></textarea>
+          </label>
+          <label class="field">B2C channel 2 and why
+            <textarea name="ch-2" rows="2"></textarea>
+          </label>
+          <label class="field">B2C channel 3 and why
+            <textarea name="ch-3" rows="2"></textarea>
+          </label>
+          <label class="field">B2B action toward airlines
+            <textarea name="ch-b2b" rows="2"></textarea>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>5. Secondary brand association</legend>
+          <label class="field">Which one will you leverage (country, event, co-brand, licensing&hellip;) and how?
+            <textarea name="secondary" rows="3"></textarea>
+          </label>
+        </fieldset>
+      </form>
+      <p id="save-status" class="status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">Branding and Marketing Activity</footer>
+  <script src="script.js"></script>
+</body>
+</html>

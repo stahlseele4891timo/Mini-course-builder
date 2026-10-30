@@ -7,13 +7,11 @@
 
 ## Project Structure
 
-The repo is nearly empty for now. Current files:
-
+- `index.html`: the single long scrolling page (brief, deliverables, pitches, plan template)
+- `styles.css`: layout and light/dark theme colours
+- `script.js`: theme toggle and saving the plan template in the browser
+- `Branding_and_Marketing_Activity.pptx`: an earlier sample 3-slide deck
 - `README.md`: project title
-- `Branding_and_Marketing_Activity.pptx`: a sample 3-slide deck
-- `CLAUDE.md`: these instructions
-
-Update this section as pages, styles, and scripts are added.
 
 ## Key Requirements
 
